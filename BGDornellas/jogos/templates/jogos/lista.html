@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Jogos</title>
+    <link rel="stylesheet" href="{% static 'css/jogos.css' %}">
+    <script src="{% static 'js/jogos.js' %}" defer></script>
+</head>
+<body>
+    <h1>Jogos Cadastrados</h1>
+
+    <div class="grid-jogos" id="grid-jogos">
+        {% for jogo in jogos %}
+            <div class="card-jogo">
+                {% if jogo.imagem %}
+                    <img src="{{ jogo.imagem.url }}" alt="{{ jogo.titulo }}">
+                {% else %}
+                    <img src="{% static 'images/placeholder.png' %}" alt="Sem imagem">
+                {% endif %}
+                <h3>{{ jogo.titulo }}</h3>
+                <p>{{ jogo.genero }}</p>
+                <p><small>{{ jogo.lancamento|date:"M \d\e Y" }}</small></p>
+            </div>
+        {% empty %}
+            <p style="text-align:center;">Nenhum jogo cadastrado.</p>
+        {% endfor %}
+    </div>
+
+    {% if jogos|length > 16 %}
+        <button id="btn-mostrar-mais">Mostrar mais</button>
+    {% endif %}
+</body>
+</html>

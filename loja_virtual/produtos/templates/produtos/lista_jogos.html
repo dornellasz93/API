@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Virtual</title>
+    
+    <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login na API</h2>
+        <form id="login-form" class="card">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <hr>
+
+        <h2>Produtos</h2>
+        <button id="load-produtos-btn">Carregar Produtos</button>
+        
+        <ul id="lista-produtos" class="card">
+            </ul>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
