@@ -1,5 +1,3 @@
-Claro! Com base em tudo o que configuramos, aqui está um README.md completo que explica a arquitetura de dois projetos (Backend API + Frontend Cliente) e como executá-los.
-
 Loja Virtual - API Django + Frontend Django
 Este projeto demonstra a criação de uma arquitetura de software desacoplada (decoupled). Ele é composto por dois projetos Django independentes que rodam simultaneamente:
 
